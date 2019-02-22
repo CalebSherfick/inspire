@@ -8,5 +8,15 @@ export default class Weather {
     // You should probably convert the temperature data to either F or C
     this.city = data.name
     this.kelvin = data.main.temp
+    this.celcius = (this.kelvin) - 273.15
+    this.fahrenheit = (this.celcius) * (9 / 5) + 32
+  }
+
+  getWeather() {
+    return `
+    ${Math.floor(this.fahrenheit)}° F
+  ${ this.city}
+`
+
   }
 }
