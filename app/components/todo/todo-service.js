@@ -1,6 +1,8 @@
+import Todo from "../../models/todo.js";
+
 // @ts-ignore
-const todoApi = axios.create({
-	baseURL: 'https://bcw-sandbox.herokuapp.com/api/jake/todos/',
+let todoApi = axios.create({
+	baseURL: 'https://bcw-sandbox.herokuapp.com/api/Contineur/todos/',
 	timeout: 3000
 });
 
@@ -19,6 +21,10 @@ function _setState(prop, data) {
 }
 
 export default class TodoService {
+	get Todos() {
+		return _state.todos
+	}
+
 	get TodoError() {
 		return _state.error
 	}
@@ -31,34 +37,90 @@ export default class TodoService {
 		console.log("Getting the Todo List")
 		todoApi.get()
 			.then(res => {
-				// WHAT DO YOU DO WITH THE RESPONSE?
+				console.log(res)
+				let data = res.data.data.map(d => new Todo(d))
+				_setState('todos', data)
 			})
-			.catch(err => _setState('error', err.response.data))
+			.catch(err => {
+				console.error(err)
+			})
 	}
 
-	addTodo(todo) {
-		todoApi.post('', todo)
+
+
+
+
+
+
+	addTask(rawTask) {
+		let newTask = new Todo(rawTask)
+		todoApi.post('', newTask)
 			.then(res => {
-				// WHAT DO YOU DO AFTER CREATING A NEW TODO?
+				this.getTodos()
 			})
-			.catch(err => _setState('error', err.response.data))
 	}
 
-	toggleTodoStatus(todoId) {
-		let todo = _state.todos.find(todo => todo._id == todoId)
-		// Be sure to change the completed property to its opposite
-		// todo.completed = !todo.completed <-- THIS FLIPS A BOOL
-
-		todoApi.put(todoId, todo)
+	deleteTask(id) {
+		todoApi.delete(id)
 			.then(res => {
-				//DO YOU WANT TO DO ANYTHING WITH THIS?
+				this.getTodos()
 			})
-			.catch(err => _setState('error', err.response.data))
 	}
 
-	removeTodo(todoId) {
-		// This one is on you to write.... 
-		// The http method is delete at the todoId
+	completeTask(id) {
+		let todo = _state.todos.find(todo => todo._id == id)
+		todo.completed = !todo.completed
+		todoApi.put(id, todo)
+			.then(res => {
+				this.getTodos()
+			})
 	}
+
+
+
+
+
+	// toggleTodoStatus(todoId) {
+	// 	let todo = _state.todos.find(todo => todo._id == todoId)
+	// 	// Be sure to change the completed property to its opposite
+	// 	// todo.completed = !todo.completed <-- THIS FLIPS A BOOL
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	// addTodo(todo) {
+	// 	todoApi.post('', todo)
+	// 		.then(res => {
+	// 			// WHAT DO YOU DO AFTER CREATING A NEW TODO?
+	// 		})
+	// 		.catch(err => _setState('error', err.response.data))
+	// }
+
+
+	// 	todoApi.put(todoId, todo)
+	// 		.then(res => {
+	// 			//DO YOU WANT TO DO ANYTHING WITH THIS?
+	// 		})
+	// 		.catch(err => _setState('error', err.response.data))
+	// }
+
+	// removeTodo(todoId) {
+	// 	// This one is on you to write.... 
+	// 	// The http method is delete at the todoId
+	// }
 
 }

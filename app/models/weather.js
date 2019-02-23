@@ -15,8 +15,7 @@ export default class Weather {
   getWeather() {
     return `
     ${Math.floor(this.fahrenheit)}° F
-  ${ this.city}
+  ${this.city}
 `
-
   }
 }

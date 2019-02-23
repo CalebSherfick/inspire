@@ -3,7 +3,20 @@ import TodoService from "./todo-service.js";
 const _todoService = new TodoService()
 
 function _drawTodos() {
-	//WHAT IS MY PURPOSE?
+	console.log(_todoService.Todos)
+	let template = ''
+	let task = _todoService.Todos
+	task.forEach(t => {
+		template += t.getTodoTemp()
+	})
+	document.getElementById('todos').innerHTML = template
+
+
+	document.getElementById('form-content').innerHTML = `            
+    <form onsubmit="app.controllers.todoController.addTask(event)">
+        <input type="text" name="task" placeholder="Task" required>
+        <button type="submit">Submit</button>
+    </form>`
 }
 
 function _drawError() {
@@ -15,29 +28,47 @@ function _drawError() {
 export default class TodoController {
 	constructor() {
 		_todoService.addSubscriber('error', _drawError)
+		_todoService.addSubscriber('todos', _drawTodos)
 		_todoService.getTodos()
-		// Don't forget to add your subscriber
 	}
 
-	addTodo(e) {
-		e.preventDefault()
-		var form = e.target
-		var todo = {
-			// DONT FORGET TO BUILD YOUR TODO OBJECT
+
+
+	addTask(event) {
+		event.preventDefault();
+		let form = event.target
+		let newTask = {
+			description: form.task.value
 		}
-
-		_todoService.addTodo(todo)
+		_todoService.addTask(newTask)
+		//Clears the form
+		form.reset()
 	}
 
-	toggleTodoStatus(todoId) {
-		// asks the service to edit the todo status
-		_todoService.toggleTodoStatus(todoId)
+	deleteTask(id) {
+		_todoService.deleteTask(id)
 	}
 
-	removeTodo(todoId) {
-		// ask the service to run the remove todo with this id
-		_todoService.removeTodo(todoId)
+	completeTask(id) {
+		_todoService.completeTask(id)
 	}
+
+
+
+
+
+
+
+
+	// toggleTodoStatus(todoId) {
+	// 	// asks the service to edit the todo status
+	// 	_todoService.toggleTodoStatus(todoId)
+	// }
+
+	// removeTodo(todoId) {
+	// 	// ask the service to run the remove todo with this id
+	// 	_todoService.removeTodo(todoId)
+	// }
 
 
 
