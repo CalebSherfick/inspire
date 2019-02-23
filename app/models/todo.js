@@ -8,7 +8,7 @@ export default class Todo {
   }
 
   getTodoTemp() {
-    if (this.completed == false) {
+    if (this.completed == true) {
       return `
   <div class="card">
   <div class="card-body">
