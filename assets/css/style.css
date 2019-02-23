@@ -7,8 +7,9 @@ body {
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
-}
+  }
 
 .card {
   background: transparent;
+  border: transparent;
 }
