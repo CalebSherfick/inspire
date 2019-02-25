@@ -3,6 +3,11 @@
   font-size: 2em;
 }
 
+html, body {
+    margin: 0;
+    height: 100%;
+}
+
 body {
   background-size: cover;
   background-repeat: no-repeat;
@@ -12,4 +17,13 @@ body {
 .card {
   background: transparent;
   border: transparent;
+}
+
+.texty {
+  text-shadow: -2px 2px 3px black;
+  color: white;
+}
+
+.todos {
+  background-color: rgba(0, 0, 0, 0.452);
 }

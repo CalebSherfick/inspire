@@ -8,8 +8,8 @@ export default class Quote {
 
   getQuoteTemp() {
     return `    
-    <h3>"${this.body}"</h3>
-    <h4>${this.author}</h4>    
+    <h3 class="texty" onhover="app.controllers.quoteController.showAuthor(${this.author})">"${this.body}"</h3>
+    <h4 class="texty">${this.author}</h4>    
     `
   }
 }

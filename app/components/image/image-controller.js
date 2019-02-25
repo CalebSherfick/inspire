@@ -8,10 +8,6 @@ function _draw() {
   document.body.style.backgroundImage = `url(${img})`
 }
 
-
-
-
-
 export default class ImageController {
   constructor() {
     _is.addSubscribers('img', _draw)

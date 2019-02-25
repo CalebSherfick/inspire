@@ -4,8 +4,11 @@ let _qs = new QuoteService()
 
 function drawQuote() {
   console.log("THE QUOTE SAYS:", _qs.Quote)
+  // @ts-ignore
   document.getElementById('quote').innerHTML = _qs.Quote.getQuoteTemp()
 }
+
+
 
 export default class QuoteController {
   constructor() {
@@ -13,3 +16,4 @@ export default class QuoteController {
     _qs.getQuote()
   }
 }
+

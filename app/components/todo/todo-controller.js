@@ -16,7 +16,9 @@ function _drawTodos() {
     <form onsubmit="app.controllers.todoController.addTask(event)">
         <input type="text" name="task" placeholder="Task" required>
         <button type="submit">Submit</button>
-    </form>`
+		</form>`
+
+	document.getElementById('count').innerText = `Task Count: ${_todoService.countTasks().toString()}`
 }
 
 function _drawError() {
@@ -30,6 +32,7 @@ export default class TodoController {
 		_todoService.addSubscriber('error', _drawError)
 		_todoService.addSubscriber('todos', _drawTodos)
 		_todoService.getTodos()
+		_todoService.countTasks()
 	}
 
 
@@ -51,6 +54,10 @@ export default class TodoController {
 
 	completeTask(id) {
 		_todoService.completeTask(id)
+	}
+
+	countTasks() {
+		_todoService.countTasks()
 	}
 
 

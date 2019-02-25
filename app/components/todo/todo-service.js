@@ -46,8 +46,13 @@ export default class TodoService {
 			})
 	}
 
-
-
+	countTasks() {
+		let count = 0;
+		for (let i = 0; i < _state.todos.length; i++) {
+			count++
+		}
+		return count
+	}
 
 
 

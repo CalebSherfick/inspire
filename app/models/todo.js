@@ -10,22 +10,26 @@ export default class Todo {
   getTodoTemp() {
     if (this.completed == true) {
       return `
+      <div class="col-md-3">
   <div class="card">
   <div class="card-body">
-    <h4 class="card-title"> <del>${this.description}</del>  </h4>    
+    <h4 class="card-title texty"> <del>${this.description}</del>  </h4>    
     <button onclick="app.controllers.todoController.completeTask('${this._id}')">Complete</button>
     <button onclick="app.controllers.todoController.deleteTask('${this._id}')">Remove</button>
   </div>
 </div>
+</div>
    `
     } else {
       return `
+      <div class="col-md-3">
   <div class="card">
   <div class="card-body">
-    <h4 class="card-title">${this.description}</h4>    
+    <h4 class="card-title texty">${this.description}</h4>    
     <button onclick="app.controllers.todoController.completeTask('${this._id}')">Complete</button>
     <button onclick="app.controllers.todoController.deleteTask('${this._id}')">Remove</button>
   </div>
+</div>
 </div>
    `
     }
