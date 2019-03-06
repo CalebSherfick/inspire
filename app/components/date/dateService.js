@@ -3,7 +3,6 @@ let time
 function getTime() {
   let date = new Date()
   let hour = date.getHours()
-  console.log(hour)
   if (hour == 0) {
     hour = 12
   }
@@ -49,7 +48,7 @@ function _setState(prop, data) {
 
 
 //PUBLIC
-export default class Date {
+export default class DateService {
 
   addSubscriber(prop, fn) {
     _subscribers[prop].push(fn)
@@ -74,3 +73,13 @@ export default class Date {
   }
 
 }
+
+
+
+
+
+
+
+
+
+

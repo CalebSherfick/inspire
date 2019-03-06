@@ -9,7 +9,7 @@ function drawUserForm() {
                     <button type="submit" class="btn btn-primary mb-2 shadow">Submit</button>
                   </form>`
   document.querySelector('#user-form').innerHTML = template
-  document.querySelector('#user').innerHTML = 'WAT!'
+  document.querySelector('#user').innerHTML = 'Enter your name below!'
 }
 
 function drawNewUser() {
@@ -28,7 +28,7 @@ export default class GreetingController {
 
     window.localStorage.getItem('name')
     let newU = JSON.parse(window.localStorage.getItem('name'))
-    document.querySelector('#user').innerHTML = newU || 'Brett'
+    document.querySelector('#user').innerHTML = newU || 'Caleb'
   }
 
   changeUser() {
