@@ -1,12 +1,12 @@
 //PRIVATE
 import DateService from "./dateService.js";
 
-const _dateService = new DateService()
+const _ds = new DateService()
 
 function drawData() {
-  let time = _dateService.Clock
+  let time = _ds.Clock
   document.querySelector('#clock').innerHTML = time
-  // document.querySelector('#date').innerHTML = _dateService.Date
+  document.querySelector('#date').innerHTML = _ds.Date
 
   // if (+time[0] == 0 || (+time[0] == 1 && +time[1] == 0) || (+time[0] == 1 && +time[1] == 1)) {
   //   document.querySelector('#change-greeting').innerHTML = 'morning '
@@ -21,16 +21,17 @@ function drawData() {
 //PUBLIC
 export default class DateController {
   constructor() {
-    _dateService.addSubscriber('clock', drawData)
-    // _dateService.addSubscriber('todaysDate', drawData)
+    _ds.addSubscriber('clock', drawData)
+    _ds.addSubscriber('today', drawData)
 
-    // _dateService.getDate()
+    _ds.getDate()
 
     function setTime() {
-      _dateService.getClock()
+      _ds.getClock()
     }
-    setInterval(setTime, 1000)
+
     setTime()
+    setInterval(setTime, 1000)
   }
 
 }
