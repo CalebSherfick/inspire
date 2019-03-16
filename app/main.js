@@ -2,7 +2,6 @@ import WeatherController from "./components/weather/weather-controller.js";
 import TodoController from "./components/todo/todo-controller.js";
 import ImageController from "./components/image/image-controller.js";
 import QuoteController from "./components/quote/quote-controller.js";
-import GreetingController from "./components/greeting/greetingController.js";
 import DateController from "./components/date/dateController.js";
 
 
@@ -15,7 +14,6 @@ class App {
       todoController: new TodoController(),
       imageController: new ImageController(),
       quoteController: new QuoteController(),
-      greetingController: new GreetingController(),
       dateConrtoller: new DateController()
     }
   }
