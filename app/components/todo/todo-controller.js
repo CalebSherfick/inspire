@@ -13,9 +13,9 @@ function _drawTodos() {
 
 
 	document.getElementById('form-content').innerHTML = `            
-    <form onsubmit="app.controllers.todoController.addTask(event)">
-        <input type="text" name="task" placeholder="Task" required>
-        <button type="submit">Submit</button>
+    <form class="text-center" onsubmit="app.controllers.todoController.addTask(event)">
+				<input type="text" name="task" placeholder="Task" required>
+        <button class="mt-2" type="submit">Submit</button>
 		</form>`
 
 	document.getElementById('count').innerText = `Task Count: ${_todoService.countTasks().toString()}`
