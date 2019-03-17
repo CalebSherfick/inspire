@@ -6,53 +6,71 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
 	<title>Inspire</title>
+	<link href="https://fonts.googleapis.com/css?family=Alegreya+Sans+SC|Asap|Fjalla+One|Istok+Web|Questrial"
+		rel="stylesheet">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
+		integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
 		integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 	<link rel="stylesheet" href="assets/css/style.css">
 </head>
 
 <body class="container-fluid">
-	<section class="row justify-content-end align-items-center">
-		<div class="col-md-1 d-flex justify-content-center align-items-center texty todos" id="weather">
+
+
+	<section class="row mb-5">
+		<div class="col-md-1 d-flex justify-content-center texty weather">
+			<div id="weather">
+				<!-- WEATHER -->
+			</div>
 		</div>
 	</section>
 
-
-
-
-
-	<section class="row mt-5">
-		<div class="col-md-8 d-flex justify-content-end align-items-center">
+	<!-- TODO FORM -->
+	<section class="row">
+		<div class="col-md-12 d-flex justify-content-center align-items-center">
 			<div id="form-content"></div>
 			<div id="todo-error"></div>
 			<form onsubmit=""></form>
+			<div class="col-md-1 d-flex justify-content-start texty" id="count"></div>
 		</div>
-		<div class="col-md-2 d-flex justify-content-start texty" id="count"></div>
 	</section>
 
 	<section class="row pb-5 m-5 todos" id="todos">
+		<!-- TODOS -->
 	</section>
 
-	<section class="row">
-	</section>
+	<section class="row fixed-bottom ml-1">
+		<div class="col-md-5">
 
-
-
-	<div class="row pt-5 mt-5">
-		<div id="quote">
+			<div class="row">
+				<div class="col-md-12 d-flex align-items-end">
+					<div class="texty" id="clock">
+						<!-- CLOCK -->
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-12 d-flex align-items-start">
+					<div class="texty" id="date">
+						<!-- DATE -->
+					</div>
+				</div>
+			</div>
 		</div>
-		<div id="author"></div>
-	</div>
 
-	<!-- clock -->
-	<div id="clock">
-		<!-- insert clock here -->
-	</div>
+		<div class="offset-1 col-md-6 d-flex justify-content-end align-items-end">
+			<div id="quote">
+				<!-- QUOTE -->
+			</div>
+			<div id="author">
+				<!-- AUTHOR -->
+			</div>
+		</div>
 
-	<!-- date -->
-	<div id="date">
-		<!-- insert date here -->
-	</div>
+	</section>
+
+
 
 	<script src="https://momentjs.com/downloads/moment-with-locales.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.js"></script>

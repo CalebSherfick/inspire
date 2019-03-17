@@ -6,6 +6,7 @@
 html, body {
     margin: 0;
     height: 100%;
+font-family: 'Questrial', sans-serif;
 }
 
 body {
@@ -27,3 +28,37 @@ body {
 .todos {
   background-color: rgba(0, 0, 0, 0.452);
 }
+
+.weather {
+  font-size: 1.5em;
+}
+
+#clock {
+font-size: 7em;
+margin-bottom: -0.25em;
+}
+
+#date{
+font-size: 4em;
+}
+
+.fas {
+  margin-left: 0.5em;
+  margin-right: 0.5em
+
+}
+
+#count {
+  font-size: 1.25em;
+}
+
+.fas:hover {
+  cursor: pointer; 
+  text-shadow: -3px 3px 4px black;
+}
+
+.fas:active {
+  cursor: pointer; 
+  text-shadow: 0px 0px 3px black;
+}
+
