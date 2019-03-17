@@ -6,8 +6,9 @@
 html, body {
     margin: 0;
     height: 100%;
-font-family: 'Questrial', sans-serif;
+font-family: 'Hind', sans-serif;
 }
+
 
 body {
   background-size: cover;
@@ -37,15 +38,15 @@ body {
 
 input{
   width: 100%;
-  border: 2px solid black;
-  border-radius: 4px;
+  border-radius: 50px;
+  border: none;
+    font-size: 18px;
+
+  padding: 5px 15px;
 }
 
 input:focus{
-  width: 100%;
-  border: 2px solid black;
-  border-radius: 4px;
-  background-color: lightblue;
+  background-color: rgb(226, 255, 236);
 }
 
 button{
@@ -53,8 +54,7 @@ button{
   border: none;
   border-radius: 50px;
   color: #FFF;
-  padding: 5px 15px;
-  width: 100%;
+  padding: 10px 50px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
@@ -63,26 +63,10 @@ button{
 
 button:hover{
   background-color: #1ED760;
-  border: none;
-  border-radius: 50px;
-  color: #FFF;
-  padding: 5px 15px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 18px;
 }
 
 button:active{
   background-color: rgb(29, 184, 83);
-  border: none;
-  border-radius: 50px;
-  color: #FFF;
-  padding: 5px 15px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 18px;
   }
 
 .fas {
